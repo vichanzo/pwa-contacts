@@ -3,86 +3,122 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>PK Contacts</title>
+  <title>Calculate Age in Days</title>
   <!-- materialize icons, css & js -->
-  <link type="text/css" href="css/materialize.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/materialize.min.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link type="text/css" href="css/styles.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
   <script type="text/javascript" src="js/materialize.min.js"></script>
-  
+
 </head>
 <body class="teal lighten-5">
-
   <!-- top nav -->
   <nav class="z-depth-0">
-    <div class="nav-wrapper container">      
-      <span class="left grey-text text-darken-1">
+    <div>
+      <span class="left grey-text text-darken-2">
         <i class="material-icons sidenav-trigger" data-target="side-menu">menu</i>
       </span>
-      <a class="right" href="/">PK<span>Contacts</span></a>
+      <a class="right" href="/">Vince's<span>Program</span></a>
     </div>
   </nav>
 
   <!-- side nav -->
   <ul id="side-menu" class="sidenav side-menu">
-    <li><a class="subheader">PK Contacts</a></li>
+    <li><a class="subheader">Vince Program</a></li>
     <li><a href="/" class="waves-effect">Home</a></li>
-    <li><a href="pages/about.html" class="waves-effect">About</a></li>    
+    <li><a href="pages/about.html" class="waves-effect">About</a></li>
   </ul>
 
-  <!-- contacts -->
-  <div class="contacts container grey-text text-darken-1">
-    <!-- <div class="card-panel contact teal lighten-4 row">
-      <img src="img/pkcontacts.png" alt="contact thumb">
-      <div class="contact-details">
-        <div class="contact-title">John Doe</div>
-        <div class="contact-numbers">+130902092309</div>
-      </div>      
-      <div class="contact-options">        
-        <i class="material-icons call_out">call_outline</i>                       
-        <i class="material-icons">delete_outline</i>              
-      </div>
-    </div>     -->
-    <div class="grey-text text-darken-1 pk-contact">
-      <div class="contact-image">
-        <img src="img/pkcontacts.png" alt="contact thumb">
-      </div>
-      <div class="contact-details">
-        <div class="contact-title">John Doe</div>
-        <div class="contact-numbers">+130902092309</div>
-      </div>
-      <div class="contact-options">        
-        <i class="material-icons">call</i>              
-        <i class="material-icons">delete_outline</i>              
-      </div>
-    </div>
+  <div class="card-panel light-blue darken-2"><h3>Hello world!</h3></div>
+  <div class="row">
+    <div class="col m1 center">one</div>
+    <div class="col m1 center">two</div>
+    <div class="col m1 center">three</div>
+    <div class="col m1 center">one</div>
+    <div class="col m1 center">two</div>
+    <div class="col m1 center">three</div>
+    <div class="col m1 center">one</div>
+    <div class="col m1 center">two</div>
+    <div class="col m1 center">three</div>
+    <div class="col m1 center">one</div>
+    <div class="col m1 center">two</div>
+    <div class="col m1 center">three</div>
   </div>
+  <div class="row">
+   <div class="col m4 l3">
+      <p>This text will use 12 columns on a small screen, 4 on a medium screen (m4), and 3 on a large screen (l3).</p>
+   </div>
+   <div class="col s12 m8 l9 right">
+      <!-- <p>This text will use 4 columns on a small screen (s4), 8 on a medium screen (m8), and 9 on a large screen (l9).</p> -->
+      <table id='table'>
+        <tr>
+          <th>Name</th>
+          <th>Date</th>
+        </tr>
+      </table>
+   </div>
+ </div>
+ <hr/>
+ <div class="row">
+   <div class="col m4 ">Last refreshed <span id="output">----</span></div>
+   <div class="col right">
+     <span>hi</span>
+     <a class="btn-floating btn-small add-btn sidenav-trigger grey" data-target="side-form">
+       <i class="material-icons">settings</i>
+     </a>
+   </div>
+ </div>
 
-  <div class="center">
-    <a class="btn-floating btn-small btn-large add-btn sidenav-trigger" data-target="side-form">
-      <i class="material-icons">add</i>
-    </a>
-  </div>
+ <!-- settings side nav -->
+ <div id="side-form" class="sidenav side-form">
+   <form class="add-contact container section">
+     <h6>Settings</h6>
+     <div class="divider"></div>
+     <div class="input-field">
+       <input placeholder="e.g. John Doe" id="title" type="text" class="validate">
+       <label for="title">Name</label>
+     </div>
+     <div class="input-field">
+       <input placeholder="e.g. +198392323" id="date2" type="date" class="datepicker">
+       <label for="numbers">Date 2</label>
+     </div>
+     <div class="input-field center">
+       <button class="btn-small" onclick="okFunction()">OK</button>
+       <button class="btn-small">Cancel</button>
+     </div>
+   </form>
+ </div>
 
-  <!-- add contact side nav -->
-  <div id="side-form" class="sidenav side-form">
-    <form class="add-contact container section">
-      <h6 >New Contact</h6>
-      <div class="divider"></div>
-      <div class="input-field">
-        <input placeholder="e.g. John Doe" id="title" type="text" class="validate">
-        <label for="title">Contact Name</label>
-      </div>
-      <div class="input-field">
-        <input placeholder="e.g. +198392323" id="numbers" type="text" class="validate">
-        <label for="numbers">Number</label>
-      </div>
-      <div class="input-field center">
-        <button class="btn-small">Add Contact</button>
-      </div>
-    </form>
-  </div>
+ <script>
+  function okFunction() {
+    var title = document.getElementById("title").value;
+    var date2 = document.getElementById("date2").value;
+    document.getElementById("output").innerHTML = date2;
+    alert("OK " + title + " " +  date2);
+  }
 
-  <script src="js/common.js"></script>
+  $(document).ready(function () {
+
+      // FETCHING DATA FROM JSON FILE
+      $.getJSON("http://localhost:8000/dates.json",
+          function (data) {
+        var table_str = '';
+
+        // ITERATING THROUGH OBJECTS
+        $.each(data, function (key, value) {
+
+          //CONSTRUCTION OF ROWS HAVING
+          // DATA FROM JSON OBJECT
+          table_str += '<tr>';
+          table_str += '<td>' + value.Name + '</td>';
+          table_str += '<td>' + value.Date + '</td>';
+          table_str += '</tr>';
+        });
+
+        //INSERTING ROWS INTO TABLE
+        $('#table').append(student);
+
+ </script>
+ <script src="js/common.js"></script>
 </body>
 </html>
